@@ -1,0 +1,53 @@
+---
+const {title} = Astro.props
+---
+
+<section class="hero">
+    <div class="hero_title">
+        <div class="hero_box">
+            <img class="hero_img" src="/assets/icons/civilizations.svg" alt="Icono de Civilizations">
+            <h1 class="hero_h1">{title}</h1>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        height: 192px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(/assets/img/default-title-bg.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border: 3px solid;
+        border-image: linear-gradient(to right, transparent, #b8862d, transparent) 1;
+    }
+
+    .hero_title {
+        min-width: 1104px;
+        height: 93px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(89deg, #04203b00 0%, #001d34 28%, #001d34 68%, #04203b00 100%);
+        border: 3px solid;
+        border-image: linear-gradient(to right, transparent, #b8862d, transparent) 1;
+    }
+
+    .hero_box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero_img{
+        height: 45px;
+    }
+
+    .hero_h1{
+        font-size: 3rem;
+    }
+</style>

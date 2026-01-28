@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/public/Priest_AoE.svg" />
+		<link rel="icon" href="/public/Priest_AoE.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Ejercicio 87</title>
+	</head>
+	<body>
+		<slot></slot>
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		outline: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-size: 16px;
+		scroll-behavior: smooth;
+	}
+
+	@font-face {
+		font-family: Miola;
+		src: url(/assets/fonts/miola.otf);
+	}
+
+	@font-face {
+		font-family: Nota;
+		src: url(/assets/fonts/NotoSans-VariableFont_wdth.ttf);
+	}
+
+	:root {
+		--color-background: #181c29;
+		--color-blue-midnight: #001d34;
+		--color-dark: #000000;
+		--color-golden-dark: #ab7d2a;
+		--color-golden-light: #ffdf91;
+		--color-gradient-navbar: #767c9265;
+		--color-light: #ffffff;
+		--color-links: #53dbdd;
+		--color-text-details: #c7c7c7;
+		--font-primary: Miola;
+		--font-secundary: Nota;
+	}
+
+	body {
+		background: var(--color-background);
+		color: var(--color-golden-light);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	body, input, button {
+		font-family: var(--font-primary);
+	}
+
+	button {
+		cursor: pointer;
+	}
+</style>

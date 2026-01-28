@@ -1,0 +1,61 @@
+<header class="header">
+    <a href="/">
+        <div class="header_logo">
+            <img class="header_img" src="/ageofempires-logo.webp" alt="logo age of empires">
+        </div>
+    </a>
+    <div class="header_menu">
+        <nav class="header_nav">
+            <a class="header_a" href="#">AGE INSIDERS</a>
+            <a class="header_a" href="#">GAMES</a>
+            <a class="header_a" href="#">COMMUNITY</a>
+            <a class="header_a" href="#">NWES</a>
+            <a class="header_a" href="#">MODS</a>
+            <a class="header_a" href="#">SUPPORT</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .header {
+        width: 100%;
+        background: linear-gradient(90deg, #181c29 0%, #767c9266 50%, #181c29 100%);
+    }
+
+    .header_logo {
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: var(--color-dark);
+        border: 3px solid;
+        border-image: linear-gradient(to right, transparent, #b8862d, transparent) 1;
+    }
+
+    .header_img {
+        height: 44px;
+    }
+
+    .header_menu {
+        height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .header_nav {
+        margin: 0px auto;
+        max-width: 1580px;
+        min-width: 800px;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .header_a {
+        text-decoration: none;
+        color: var(--color-golden-light);
+    }
+</style>

@@ -1,0 +1,113 @@
+---
+import civilizations from "../../data/civilizations.json";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import Footer from "../../components/Footer.astro";
+export async function getStaticPaths() {
+    return civilizations.map((civ) => {
+        return {
+            params: { slug: civ.name },
+            props: { civ },
+        };
+    });
+}
+const { civ } = Astro.props;
+---
+
+<Layout>
+    <Header></Header>
+    <Hero title={civ.name}></Hero>
+    <section class="selection">
+        <nav class="selection_nav">
+            {civilizations.map((item) => (
+                <a class="selection_a" href={`/civilizations/${item.name}`}>
+                    <div class="selection_btn">
+                        <img class="selection_flag" src={item["flag-image"]} alt={item.name}/>
+                        <p class="selection_p">{item.name}</p>
+                    </div>
+                </a>
+            ))}
+        </nav>
+    </section>
+    <section class="details" style={`--bg-url: url(${civ["civilization-image"]})`}>
+        <div class="details_card">
+            <h3 class="details_h3">
+                {civ.title}
+            </h3>
+            <p class="details_p">
+                {civ.description}
+            </p>
+        </div>
+    </section>
+    <Footer></Footer>
+</Layout>
+
+<style>
+    .selection {
+        border: 4px solid;
+        border-image: linear-gradient(to right,transparent,#b8862d,transparent) 1;
+    }
+
+    .selection_nav {
+        margin: 0 auto;
+        padding: 2rem;
+        max-width: 1580px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 12px;
+    }
+
+    .selection_a {
+        max-width: 350px;
+        text-decoration: none;
+        color: var(--color-golden-light);
+    }
+
+    .selection_btn {
+        padding: 10px;
+        max-width: 350px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-image: url(/assets/img/fondo_subnav.webp), linear-gradient(0deg, #002845, #002845);
+        background-blend-mode: overlay;
+    }
+
+    .selection_flag {
+        width: 2rem;
+    }
+
+    .details {
+        padding-left: 10%;
+        min-height: 700px;
+        background: linear-gradient(90deg, #002845, #002845, #013f6300), var(--bg-url);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+    }
+
+    .details_card {
+        padding: 2rem;
+        max-width: 40%;
+        background: linear-gradient(90deg, var(--color-blue-midnight), var(--color-blue-midnight), #013f6300), url(/assets/img/pattern_right.webp);
+        background-blend-mode: overlay;
+        background-size: contain;
+        box-shadow: 0px 2px 4px rgb(27, 27, 27);
+    }
+
+    .details_h3 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .details_p {
+        font-family: var(--font-secundary);
+        font-size: 1rem;
+        color: var(--color-text-details);
+    }
+</style>
